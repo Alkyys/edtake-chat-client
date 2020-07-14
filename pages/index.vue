@@ -36,6 +36,7 @@ export default {
   methods: {
     submitHandler(data) {
       alert(`Thank you, ${data.email}`)
+      this.$router.push({ name: 'chat' })
     },
   },
 }
