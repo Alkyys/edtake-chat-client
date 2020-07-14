@@ -22,7 +22,7 @@
     </svg>
     <svg
       class="Logo"
-      width="512px"
+      width="338"
       height="180"
       viewBox="0 0 512 275"
       version="1.1"
