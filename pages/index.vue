@@ -4,15 +4,41 @@
       <Logo />
       <h1 class="title">Connection</h1>
       <div class="links">
-        <input type="text" />
-        <input type="text" />
+        <FormulateForm @submit="submitHandler">
+          <FormulateInput
+            v-model="email"
+            type="email"
+            name="email"
+            label="Email"
+            validation="required|email"
+          />
+          <FormulateInput
+            v-model="password"
+            type="password"
+            label="Password"
+            validation="required"
+          />
+          <FormulateInput type="submit" label="Valider" />
+        </FormulateForm>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      email: undefined,
+      password: undefined,
+    }
+  },
+  methods: {
+    submitHandler(data) {
+      alert(`Thank you, ${data.email}`)
+    },
+  },
+}
 </script>
 
 <style>
