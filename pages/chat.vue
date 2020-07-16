@@ -1,7 +1,7 @@
 <template>
   <div class="chat">
     <ul>
-      <li v-for="message in messages" :key="message">
+      <li v-for="(message, index) in messages" :key="index">
         <div class="bubbleWrapper">
           <template v-if="message.isOwn">
             <div class="inlineContainer own">
@@ -9,9 +9,7 @@
                 class="inlineIcon"
                 src="https://www.pinclipart.com/picdir/middle/205-2059398_blinkk-en-mac-app-store-ninja-icon-transparent.png"
               />
-              <div class="ownBubble own">
-                {{ message.message }}
-              </div>
+              <div class="ownBubble own">{{ message.message }}</div>
             </div>
             <span class="own">{{ message.time }}</span>
           </template>
@@ -63,8 +61,9 @@ export default {
     }
   },
   mounted() {
-    // proteger l'app
+    // sicket.io
   },
+  middleware: ['auth'],
 }
 </script>
 
